@@ -1,0 +1,30 @@
+[tool.poetry]
+authors = ["Usmonbek Ravshanov <usmonbek_ravshanov@epam.com>"]
+description = "Simple application for practicing SDLC tools"
+name = "practice"
+readme = "README.md"
+version = "0.1.0"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.115.2"
+uvicorn = "^0.31.1"
+sqlalchemy = {extras = ["asyncpg"], version = "^2.0.35"}
+psycopg2-binary = "^2.9.9"
+alembic = "^1.13.3"
+pydantic = "^2.9.2"
+pydantic-settings = "^2.5.2"
+asyncpg = "^0.29.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.3"
+black = "^24.10.0"
+isort = "^5.13.2"
+
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core"]
+
+[virtualenvs]
+in-project = true
+create = true
