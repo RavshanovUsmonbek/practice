@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches:
+    - master
+  pull_request:
+    branches:
+    - master
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Print date job1
+      run: date +"%Y-%m-%d"
+
+  job2:
+    runs-on: windows-latest
+    steps:
+    - name: Print date job2
+      run: echo %date%
+  job3:
+    runs-on: macos-latest
+    steps:
+    - name: Print date job3
+      run: date +"%Y-%m-%d"
+  job4:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Print date job4
+      run: date +"%Y-%m-%d"
