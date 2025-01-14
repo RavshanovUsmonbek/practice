@@ -1,35 +1,10 @@
 name: CI
 
-on:
-  push:
-    branches:
-    - main
-  pull_request:
-    branches:
-    - main
+on: push
 
 jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-    - name: Print date job1
-      run: date +"%Y-%m-%d"
-
-  job2:
-    runs-on: windows-latest
-    steps:
-    - name: Print date job2
-      run: (Get-Date).ToShortDateString()
-    needs: job1
-  job3:
-    runs-on: macos-latest
-    steps:
-    - name: Print date job3
-      run: date +"%Y-%m-%d"
-    needs: job2
-  job4:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Print date job4
-      run: date +"%Y-%m-%d"
-    needs: job3
+    - name: Running custom action
+      uses: ravshanovusmonbek/print_ci@v1
